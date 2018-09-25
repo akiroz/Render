@@ -233,7 +233,7 @@ public class UIStylesheetRule: CustomStringConvertible {
   }
   /// Object representation for the *rhs* value of this rule.
   public var object: AnyObject? {
-    switch type {
+    switch type! {
     case .bool, .number, .expression:
       return nsNumber
     case .font:
@@ -260,7 +260,7 @@ public class UIStylesheetRule: CustomStringConvertible {
     /// There's a type mismatch between the desired type and the type currently associated to this
     /// rule.
     guard self.type == type else {
-      warn("type mismatch – wanted \(type), found \(self.type).")
+      warn("type mismatch – wanted \(type), found \(self.type!).")
       return `default`
     }
     /// The rule is a map {EXPR: VALUE}.
