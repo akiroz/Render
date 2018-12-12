@@ -553,7 +553,7 @@ public enum UINodeOption: Int {
   case preventDelegateCallbacks
 }
 
-func debugReconcileTime(_ label: String, startTime: CFAbsoluteTime, threshold: CFAbsoluteTime = 16){
+func debugReconcileTime(_ label: String, startTime: CFAbsoluteTime, threshold: CFAbsoluteTime = 42){
   let timeElapsed = (CFAbsoluteTimeGetCurrent() - startTime) * 1000
   // - note: 60fps means you need to render a frame every ~16ms to not drop any frames.
   // This is even more important when used inside a cell.
